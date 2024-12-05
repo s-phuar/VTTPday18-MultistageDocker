@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container">
+        <br><br>
+        <a class="btn btn-primary" th:href="@{/}">Create Another</a>
+        <br/><br/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Postal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Only render the table rows if there is data in person -->
+                <tr th:each="p : ${persons}">
+                    <td th:text="${p.id}"></td>
+                    <td th:text="${p.fullName}"></td>
+                    <td th:text="${p.email}"></td>
+                    <td th:text="${p.phoneNumber}"></td>
+                    <td th:text="${p.postalCode}"></td>
+                    <td>
+                        <!-- Links for delete and update actions -->
+                        <a class="btn btn-danger" th:href="@{/delete/{id}(id=${p.id})}">Delete</a>
+                        <a class="btn btn-secondary" th:href="@{/update/{id}(id=${p.id})}">Update</a>
+                    </td>
+                </tr>
+                <!-- Show message when no records are found -->
+                <tr th:if="${#lists.isEmpty(persons)}">
+                    <td colspan="6">No record found</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+
+
+</body>
+</html>

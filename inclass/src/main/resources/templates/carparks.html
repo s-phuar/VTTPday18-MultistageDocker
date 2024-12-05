@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>carpark</th>
+                <th>weekday rate 1</th>
+                <th>weekday rate 2</th>
+                <th>saturday rate</th>
+                <th>sunday and public holiday</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr data-th-each="cp: ${carparks}">
+                <td data-th-utext="${cp.id}"></td>
+                <td data-th-utext="${cp.carpark}"></td>
+                <td data-th-utext="${cp.weekdayRate1}"></td>
+                <td data-th-utext="${cp.weekdayRate2}"></td>
+                <td data-th-utext="${cp.saturdayRate}"></td>
+                <td data-th-utext="${cp.sundayHolidayRate}"></td>
+            </tr>    
+        </tbody>
+    </table>
+    
+</body>
+</html>

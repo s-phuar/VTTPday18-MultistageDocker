@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>use url:</h1>
+    <h2> /api/carparks </h2>
+    <h2> /carparks </h2>
+
+    <br>
+    </br>
+    <br>
+    </br>
+    <br>
+    </br>
+
+    <form method="POST" action="/person" data-th-object="${person}">
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="number" data-th-field="*{id}" required></td>
+            </tr>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" data-th-field="*{fullName}" ></td>
+                <p data-th-if ="${#fields.hasErrors('fullName')}"
+                    data-th-text="${#fields.errors('fullName')}">
+                    <!-- data-th-errors="*{fullName}"> -->
+                </p>
+            </tr>   
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" data-th-field="*{email}" ></td>
+                <p data-th-if ="${#fields.hasErrors('email')}"
+                    data-th-text="${#fields.errors('email')}">
+                    <!-- data-th-errors="*{email}"> -->
+                </p>
+            </tr>    
+
+            <tr>
+                <td>Postal Code:</td>
+                <td><input type="text" data-th-field="*{postalCode}" required></td>
+                <p data-th-if ="${#fields.hasErrors('postalCode')}"
+                    data-th-text="${#fields.errors('postalCode')}">
+                    <!-- data-th-errors="*{postalCode}"> -->
+                </p>
+            </tr>            
+            
+            <tr>
+                <td>Phone Number:</td>
+                <td><input type="text" data-th-field="*{phoneNumber}" required></td>
+                <p data-th-if ="${#fields.hasErrors('phoneNumber')}"
+                    data-th-text="${#fields.errors('phoneNumber')}">
+                    <!-- data-th-errors="*{phoneNumber}"> -->
+                </p>
+            </tr>
+
+            <!-- <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" data-th-field="*{DOB}" required></td>
+                <p data-th-if ="${#fields.hasErrors('DOB')}"
+                    data-th-text="${#fields.errors('DOB ')}">
+                </p>
+            </tr> -->
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit"> Create </button>
+                </td>
+             </tr>
+    
+        </table>
+
+    </form>
+
+</body>
+</html>

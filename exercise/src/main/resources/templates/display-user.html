@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <div th:if="${userList.isEmpty()}">
+                <h1>No record found</h1>
+            </div>
+            <tr data-th-each="user, state: ${userList}">
+                <div th:if="${state.size gt 0}">
+                    <td data-th-text="${user.name}"></td>
+                    <td data-th-text="${user.dob}"></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>    
+
+    <a href="/">Back<a>
+
+</body>
+</html>

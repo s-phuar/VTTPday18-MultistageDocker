@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="POST" action="/display" data-th-object="${user}">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name" data-th-field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth: </td>
+                <td><input type="date" name="name" data-th-field="*{dob}"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="submit"> Save </button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+    
+</body>
+</html>
